@@ -1,7 +1,7 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
-import PrimaryLink from '@/Components/Links/Primary.vue';
+import PrimaryLink from '@/components/Links/Primary.vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import Table from '@/components/Table/Table.vue';
 import Row from '@/components/Table/Row.vue';
