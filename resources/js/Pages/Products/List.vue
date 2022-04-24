@@ -2,6 +2,7 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
 import PrimaryLink from '@/components/Links/Primary.vue';
+import DeleteLink from '@/components/Links/Red.vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import Table from '@/components/Table/Table.vue';
 import Row from '@/components/Table/Row.vue';
@@ -14,6 +15,7 @@ export default {
         AppLayout,
         JetSectionBorder,
         PrimaryLink,
+        DeleteLink,
         Head,
         Link,
         Table,
@@ -77,9 +79,22 @@ export default {
                                     {{ product.body }}
                                 </Column>
                                 <Column> 
-                                    <PrimaryLink :link="route('products-edit', product)"> 
-                                        Edit
-                                    </PrimaryLink>
+                                    <div class="flex flex-row gap-2">
+                                        <PrimaryLink :link="route('products-edit', product)"> 
+                                            Edit
+                                        </PrimaryLink>
+                                        <DeleteLink :link="route('products-delete', product)"> 
+                                            <template #button>
+                                                Delete
+                                            </template>
+                                            <template #modaltitle>
+                                                Delete
+                                            </template>
+                                            <template #modalbody>
+                                                Delete
+                                            </template>
+                                        </DeleteLink>
+                                    </div>
                                 </Column>
                             </Row>
                     </template>

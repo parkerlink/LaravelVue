@@ -100,11 +100,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function delete(Product $product)
     {
         $product->delete();
-        return response()->json([
-            'message'=>'Product Deleted Successfully!!'
-        ]);
+        return redirect()->route('products');
+        // return response()->json([
+        //     'message'=>'Product Deleted Successfully!!'
+        // ]);
     }
 }

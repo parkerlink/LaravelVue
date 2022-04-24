@@ -43,6 +43,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
 
     Route::put('/products/{product}/update', [ProductController::class, 'update'])
     ->name('products-update');
+
+    Route::get('/products/{product}/delete', [ProductController::class, 'delete'])
+    ->name('products-delete');
     
     // Route::get('/products', function () {
     //     return Inertia::render('Products/List');
